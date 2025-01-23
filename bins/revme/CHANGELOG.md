@@ -6,6 +6,231 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0](https://github.com/elijahhampton/revm/compare/revme-v2.3.0...revme-v3.0.0) - 2025-01-23
+
+### Added
+
+- EthHandler trait (#2001)
+- *(EIP-7840)* Add blob schedule to execution client cfg (#1980)
+- bump eof validation tests (#1963)
+- simplify Transaction trait (#1959)
+- Split inspector.rs (#1958)
+- align Block trait (#1957)
+- integrate codspeed (#1935)
+- Restucturing Part7 Handler and Context rework (#1865)
+- restructuring Part6 transaction crate (#1814)
+- extract statetest models/structs to standalone crate (#1808)
+- Merge validation/analyzis with Bytecode (#1793)
+- restructure part3 fix examples  (#1792)
+- Restructuring Part3 inspector crate (#1788)
+- restructure Part2 database crate (#1784)
+- use TestAuthorization and skip decoding of eip7702 tx (#1785)
+- project restructuring Part1 (#1776)
+- introducing EvmWiring, a chain-specific configuration (#1672)
+- *(statetest)* enable EOF in Prague tests (#1753)
+- *(eip7702)* Impl newest version of EIP  (#1695)
+- c-kzg bump, cleanup on kzgsetting (#1719)
+- *(EOF)* Run EOF tests from eth/tests (#1690)
+- *(EOF)* add evmone test suite (#1689)
+- *(EOF)* Add EOF validation in revme bytecode cmd (#1660)
+- *(EOF)* EOF Validation add code type and sub container tracker (#1648)
+- *(eof)* cli eof-validation (#1622)
+- *(EOF)* Bytecode::new_raw supports EOF, new_raw_checked added (#1607)
+- *(EOF)* Put EOF bytecode behind an Arc (#1517)
+- *(revme)* add prague spec (#1506)
+- *(precompile)* Prague - EIP-2537 - BLS12-381 curve operations (#1389)
+- add trace option in `revme evm` (#1376)
+- *(revme)* add --keep-going to statetest command (#1277)
+- EOF (Ethereum Object Format) (#1143)
+- [**breaking**] TracerEip3155 optionally traces memory (#1234)
+- use `impl` instead of `dyn` in `GetInspector` (#1157)
+- add evm script (#1039)
+- split off serde_json dependency to its own feature (#1104)
+- tweeks for v4.0 revm release (#1048)
+- *(revme)* make it runnable by goevmlab (#990)
+- EvmBuilder and External Contexts (#888)
+- Loop call stack (#851)
+- *(revme)* format kzg setup (#818)
+- *(interpreter)* add more helper methods to memory (#794)
+- derive more traits (#745)
+- Alloy primitives (#724)
+- implement EIP-4844 (#668)
+- *(StateBuilder)* switch builder option from without_bundle to with_bundle (#688)
+- alloy migration (#535)
+- State with account status (#499)
+- *(cancun)* EIP-5656: MCOPY - Memory copying instruction (#528)
+- json opcode traces EIP-3155 (#356)
+- *(Shanghai)* All EIPs: push0, warm coinbase, limit/measure initcode (#376)
+- revm-interpreter created (#320)
+- Export CustomPrinter insector from revm (#300)
+- substitute web3db to ethersdb (#293)
+- *(interpreter)* Unify instruction fn signature (#283)
+- *(revm)* Add prevrandao field to EnvBlock (#271)
+- Migrate `primitive_types::U256` to `ruint::Uint<256, 4>` (#239)
+- *(revm, revme)* gas inspector (#222)
+- Introduce ByteCode format, Update Readme (#156)
+- mutable call inputs
+
+### Fixed
+
+- *(revme)* Statetest stop exec when print output is true (#1995)
+- *(revme)* statetest remove redundant json output (#1994)
+- *(eof)* dont run precompile on ext delegate call (#1964)
+- *(revme)* Burntpix bench (#1937)
+- *(revme)* include correct bytecode for snailtracer  (#1917)
+- statetest json set spec_id (#1766)
+- *(statetest)* make bytecode analyzed (#1666)
+- *(EOF)* returning to non-returning jumpf, enable valition error (#1664)
+- *(statetest)* Add back Merge spec (#1658)
+- *(eip7702)* Add tests and fix some bugs (#1605)
+- *(eof)* fixture 2 tests (#1550)
+- *(revme)* Print one json outcome in statetest (#1347)
+- Drops check for .json when testing a single file (#1301)
+- *(revme)* revme error output and remove double summary (#1169)
+- *(eip4844)* Pass eth tests, additional conditions added. (#735)
+- *(test)* Check expect exception and revm error (#734)
+- k256 compile error (#451)
+- make DatabaseRef::basic consistent with Database (#201)
+- impose a memory limit (#86)
+- various inspector fixes (#69)
+
+### Other
+
+- align crates versions (#1983)
+- remove analysis bench inner loops (#1936)
+- fix comments and docs into more sensible (#1920)
+- tie journal database with database getter (#1923)
+- use stderr for revme tracer. not panic on bytecode (#1916)
+- put snailtracer and analysis contracts in files (#1911)
+- Move CfgEnv from context-interface to context crate (#1910)
+- Rename PRAGUE_EOF to OSAKA (#1903)
+- bump EOF evmone tests to v0.13.0 (#1816)
+- *(primitives)* replace HashMap re-exports with alloy_primitives::map (#1805)
+- *(revme)* replace `structopt` with `clap` (#1754)
+- release (#1729)
+- release (#1722)
+- tag v41 revm v13.0.0 (#1692)
+- release (#1683)
+- Add EOF Layout Fuzz Loop to `revme bytecode` ([#1677](https://github.com/elijahhampton/revm/pull/1677))
+- *(clippy)* 1.80 rust clippy list paragraph ident (#1661)
+- use `is_zero` for `U256` and `B256` (#1638)
+- bump versions bcs of primitives (#1631)
+- release (#1620)
+- *(GeneralState)* skip fewer specs (#1603)
+- release (#1579)
+- replace AccessList with alloy version (#1552)
+- release (#1548)
+- replace TransactTo with TxKind (#1542)
+- skip tests with storage check and return status (#1452)
+- release (#1261)
+- *(revme)* increment statetest bar *after* running the test (#1377)
+- *(interpreter)* branch less in as_usize_or_fail (#1374)
+- release (#1231)
+- use uint macro & fix various small things (#1253)
+- release (#1175)
+- tag v32 revm v7.1.0 (#1176)
+- release (#1125)
+- *(deps)* bump walkdir from 2.4.0 to 2.5.0 (#1149)
+- release tag v30 revm v6.1.0 (#1100)
+- release (#1082)
+- license date and revm docs (#1080)
+- release (#1067)
+- *(revme)* statetests new format and return error (#1066)
+- tag v27, revm v4.0.0 release (#1061)
+- *(EvmBuilder)* rename builder functions to HandlerCfg (#1050)
+- *(Interpreter)* Split calls to separate functions (#1005)
+- *(revme)* EmptyDb Blockhash string, json-outcome flag, set prevrandao in statetest (#994)
+- *(revme)* add recovery of address from secret key (#992)
+- *(log)* use alloy_primitives::Log (#975)
+- *(docs)* revme readme update (#898)
+- simplify use statements (#864)
+- decode KZG points directly into the buffers (#840)
+- bump v26 revm v3.5.0 ([#765](https://github.com/elijahhampton/revm/pull/765))
+- tag v25, revm v3.4.0 (#755)
+- BLOBBASEFEE opcode (#721)
+- Never inline the prepare functions ([#712](https://github.com/elijahhampton/revm/pull/712))
+- *(deps)* bump bytes from 1.4.0 to 1.5.0 (#707)
+- make `impl Default for StateBuilder` generic (#690)
+- *(deps)* bump walkdir from 2.3.3 to 2.4.0 (#692)
+- *(cfg)* convert chain_id from u256 to u64 (#693)
+- Revert "feat: alloy migration ([#535](https://github.com/elijahhampton/revm/pull/535))" ([#616](https://github.com/elijahhampton/revm/pull/616))
+- spell check (#615)
+- avoid unnecessary allocations (#581)
+- clippy and fmt (#568)
+- optimize stack usage for recursive `call` and `create` programs ([#522](https://github.com/elijahhampton/revm/pull/522))
+- *(deps)* bump hashbrown from 0.13.2 to 0.14.0 (#519)
+- Bump v24, revm v3.3.0 ([#476](https://github.com/elijahhampton/revm/pull/476))
+- *(deps)* bump ruint from 1.7.0 to 1.8.0 (#465)
+- Release v23, revm v3.2.0 ([#464](https://github.com/elijahhampton/revm/pull/464))
+- Release v22, revm v3.1.1 ([#460](https://github.com/elijahhampton/revm/pull/460))
+- v21, revm v3.1.0 (#444)
+- bump all
+- remove gas blocks (#391)
+- *(deps)* bump bytes from 1.3.0 to 1.4.0 (#355)
+- Bump v20, changelog ([#350](https://github.com/elijahhampton/revm/pull/350))
+- Cleanup imports ([#348](https://github.com/elijahhampton/revm/pull/348))
+- includes to libs (#338)
+- Creating revm-primitives, revm better errors and db components  ([#334](https://github.com/elijahhampton/revm/pull/334))
+- Correct typo (#282)
+- Integer overflow while calculating the remaining gas in GasInspector (#287)
+- native bits ([#278](https://github.com/elijahhampton/revm/pull/278))
+- *(release)* Bump revm and precompiles versions
+- Bump primitive_types. Add statetest spec
+- Bump revm to v2.3.0
+- typos (#263)
+- *(eth/test)* Added OEF spec for tests. Skip HighGasPrice (#261)
+- Bump revm v2.1.0 ([#224](https://github.com/elijahhampton/revm/pull/224))
+- revm bump v2.0.0, precompile bump v1.1.1 ([#212](https://github.com/elijahhampton/revm/pull/212))
+- current_opcode fn and rename program_counter to instruction_pointer ([#211](https://github.com/elijahhampton/revm/pull/211))
+- Cfg choose create analysis, option on bytecode size limit ([#210](https://github.com/elijahhampton/revm/pull/210))
+- revme some cleanup ([#202](https://github.com/elijahhampton/revm/pull/202))
+- Add support for old forks. ([#191](https://github.com/elijahhampton/revm/pull/191))
+- add lib target, make utils public (#185)
+- Handle HighNonce tests ([#176](https://github.com/elijahhampton/revm/pull/176))
+- JournaledState ([#175](https://github.com/elijahhampton/revm/pull/175))
+- Return `ExecutionResult`, which includes `gas_refunded` (#169)
+- Make CacheDB fields pub ([#145](https://github.com/elijahhampton/revm/pull/145))
+- Introduce account Touched/Cleared/None state in CacheDB ([#140](https://github.com/elijahhampton/revm/pull/140))
+- update statetest model to pass merge tests (#133)
+- don't delete account and storage entries on commit ([#126](https://github.com/elijahhampton/revm/pull/126))
+- *(clippy)* make clippy happy (#120)
+- typo fixes
+- v6 changelog, bump versions
+- some cleanup, checking on failed example tests
+- Rework analysis ([#89](https://github.com/elijahhampton/revm/pull/89))
+- refactor to exact option combinators (#96)
+- Enable statetest for Berlin/Istanbul ([#78](https://github.com/elijahhampton/revm/pull/78))
+- Big Refactor. Machine to Interpreter. refactor instructions. call/create struct ([#52](https://github.com/elijahhampton/revm/pull/52))
+- [revm] pop_top and unsafe comments ([#51](https://github.com/elijahhampton/revm/pull/51))
+- Inspector fixup
+- Bump precompiles to v0.4.0 bump revm v1.2.0
+- [revme] return error on failes statetest
+- clippy
+- [recompl] Bump precompile deps, cargo sort on workspace
+- cargo fmt
+- [revm_precompiles] added flag for k256 lib
+- [revm] Bump to v1.1.0
+- Omit edgecase high nonce test. tracer gas fix
+- Bug fix for unknown OpCode
+- internal cleanups
+- [revm] output log. Stetetest test log output. fmt
+- Bump versions, Changelogs, fmt, revm readme, clippy.
+- GasBlock for all Spec
+- [revm] Run test multiple times. fmt, BenchmarkDB
+- [revm][perf] GasBlock analazis and optimizations.
+- [revm] Optimize PC, some perf
+- [revme][debug] added help ctrl
+- [revme][debugger] stack pop/push
+- [revme] full env as cli
+- [revme][debug] some print cli
+- readme. debuger update
+- [revm] Rename Handler to Host
+- [revm] Simplified host inspector
+- [revme] debugger cli history
+- [revme][debugger] wip terminal
+- [revm][revme] statetest merged
+- [revme] initial commit. Cmd skeleton added.statetests moved
+
 ## [0.10.1](https://github.com/bluealloy/revm/compare/revme-v0.10.0...revme-v0.10.1) - 2024-08-30
 
 ### Other
